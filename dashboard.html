@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پنل ادمین | Itkhaleghi</title>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="stylesheet" href="styles/dark.css"> -->
+    <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
 </head>
 
 <body class="light-mode">
-    <!-- دکمه تغییر حالت دارک/لایت -->
-    <button class="theme-toggle">
-        <i class="fas fa-moon light-icon"></i>
-        <i class="fas fa-sun dark-icon"></i>
-    </button>
 
     <!-- دکمه همبرگر برای حالت جمع شده -->
     <button class="menu-toggle">
@@ -41,7 +36,7 @@
                     <span class="fas fa-chevron-down"></span>
                 </div>
             </div>
-        <div class="sidebar-menu">
+            <div class="sidebar-menu">
                 <ul>
                     <li>
                         <a href="dashboard.html">
@@ -88,14 +83,22 @@
     </div>
 
     <div class="main-content">
-              <header class="main-header">
+        <header class="main-header">
             <div class="navbar-right">
                 <div class="nav-header">
                     <h3 class="nav-header-title">پنل مدیریت Itkhaleghi</h3>
                 </div>
             </div>
-            
+
             <div class="navbar-left">
+                <div class="theme-switcher">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                    <label for="theme-toggle" class="theme-toggle-label">
+                        <span class="theme-toggle-ball"></span>
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </label>
+                </div>
                 <div class="notifications-dropdown">
                     <a href="notifications.html" class="notification-icon">
                         <i class="fas fa-bell"></i>
@@ -313,6 +316,7 @@
     </div>
 
     <script src="js/all.min.js"></script>
+    <script src="js/theme.js"></script>
     <script src="js/main.js"></script>
 </body>
 

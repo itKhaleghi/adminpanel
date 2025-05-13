@@ -2,7 +2,7 @@
     font-family: 'shabnam';
     src: url('../fonts/Shabnam.eot') format('eot');
     src: url('../fonts/Shabnam.ttf') format('truetype'),
-         url('../fonts/Shabnam.woff') format('woff');
+        url('../fonts/Shabnam.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -23,6 +23,16 @@
     --color-success: #2ed573;
     --color-warning: #ffa502;
     --color-info: #1e90ff;
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-primary: #396aff;
+    --transition-time: 0s;
+}
+
+[data-theme="dark"] {
+    --color-bg: #1a202c;
+    --color-text: #f0f0f0;
+    --color-primary: #4f7cff;
 }
 
 * {
@@ -36,9 +46,11 @@
 
 body {
     font-family: 'shabnam', sans-serif;
-    background-color: var(--bg);
-    color: var(--color-text);
     line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color var(--transition-time) ease,
+        color var(--transition-time) ease;
 }
 
 /* دکمه همبرگر ثابت */
@@ -142,7 +154,6 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    padding: 1rem 1.2rem;
     background-color: white;
     box-shadow: var(--shadow);
     z-index: 100;
@@ -474,7 +485,8 @@ body {
     border-collapse: collapse;
 }
 
-.data-table th, .data-table td {
+.data-table th,
+.data-table td {
     padding: 1rem;
     text-align: right;
     border-bottom: 1px solid var(--color-border);
@@ -638,9 +650,10 @@ body {
     margin-top: 0.5rem;
 }
 
-.tree .collapsed + ul {
+.tree .collapsed+ul {
     display: block;
 }
+
 /* حالت نوار کنار  */
 .sidebar {
     width: 300px;
@@ -838,25 +851,25 @@ body {
     .sidebar {
         transform: translateX(100%);
     }
-    
+
     .sidebar.active {
         transform: translateX(0);
     }
-    
+
     .main-content {
         margin-right: 0;
     }
-    
+
     .menu-toggle {
         display: flex;
     }
-    
+
     .overview-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
-    
+
     .search-form {
         width: 100%;
     }
@@ -866,16 +879,17 @@ body {
     .navbar-left {
         gap: 1rem;
     }
-    
+
     .navbar-left a span {
         display: none;
     }
-    
+
     .overview-stats {
         grid-template-columns: 1fr 1fr;
     }
-    
-    .data-table th, .data-table td {
+
+    .data-table th,
+    .data-table td {
         padding: 0.8rem;
         font-size: 0.9rem;
     }
@@ -885,11 +899,11 @@ body {
     .overview-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .tabs-header {
         flex-direction: column;
     }
-    
+
     .tab-btn {
         width: 100%;
         text-align: right;
@@ -908,7 +922,8 @@ body {
     margin-bottom: 2rem;
 }
 
-.navbar-right, .navbar-left {
+.navbar-right,
+.navbar-left {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -1010,17 +1025,20 @@ body {
     width: 20px;
     text-align: center;
 }
+
 header.overview-header {
     display: flex;
     justify-content: space-between;
     align-content: center;
     align-items: center;
 }
+
 .content-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
 }
+
 /* استایل‌های حالت تاریک */
 body.dark-mode .main-header {
     background-color: #2d3748;
@@ -1047,6 +1065,7 @@ body.dark-mode .dropdown-menu a:hover {
     background-color: #4a5568;
     color: white;
 }
+
 /* تنظیمات پشتیبان‌گیری */
 .backup-options {
     display: grid;
@@ -1106,13 +1125,84 @@ body.dark-mode .dropdown-menu a:hover {
     color: var(--color-main);
 }
 
-/* حالت تاریک برای تنظیمات پشتیبان */
-body.dark-mode .backup-card,
-body.dark-mode .backup-schedule {
-    background: #2d3748;
-    border-color: #4a5568;
+/* استایل دکمه تغییر حالت */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
-body.dark-mode .backup-card p {
-    color: #a0aec0;
+/* استایل دکمه تغییر حالت پیشرفته */
+/* استایل دکمه تغییر تم */
+.theme-switcher {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.theme-toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.theme-toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  background: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-ball {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.theme-toggle-label i {
+  font-size: 14px;
+  padding: 0 5px;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-label .fa-moon {
+  color: #f1c40f;
+}
+
+.theme-toggle-label .fa-sun {
+  color: #f39c12;
+  opacity: 0;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .theme-toggle-ball {
+  transform: translateX(28px);
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .fa-moon {
+  opacity: 0;
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .fa-sun {
+  opacity: 1;
 }
