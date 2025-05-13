@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تنظیمات سیستم | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .settings-page {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+        
+        .settings-sidebar {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .settings-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .settings-menu li {
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .settings-menu li:last-child {
+            border-bottom: none;
+        }
+        
+        .settings-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+        }
+        
+        .settings-menu a:hover {
+            background-color: var(--main-accent);
+            color: var(--color-main);
+        }
+        
+        .settings-menu a.active {
+            background-color: var(--color-main);
+            color: white;
+        }
+        
+        .settings-menu a i {
+            margin-left: 0.5rem;
+        }
+        
+        .settings-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .settings-section {
+            display: none;
+        }
+        
+        .settings-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+
+            <div class="sidebar-avatar">
+                <div class="avatar-image">
+                    <img src="./images/model.png" alt="User Avatar">
+                </div>
+                <div class="avatar-info">
+                    <div class="avatar-text">
+                        <h4>ابوالفضل خالقی</h4>
+                        <small>Example@gmail.com</small>
+                    </div>
+                    <span class="fas fa-chevron-down"></span>
+                </div>
+            </div>
+        <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content-management.html">
+                            <i class="fas fa-file-alt"></i>
+                            <span>مدیریت محتوا</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tickets.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>تیکت‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fas fa-bell"></i>
+                            <span>اعلان‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>تنظیمات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="sidebar-card-box">
+                    <h3>افزودن تبلیغات</h3>
+                    <p>برای کسب درآمد به ویدیوهای خود تبلیغات اضافه کنید</p>
+                </div>
+                <button class="btn w-full pt-5">الان بسازید</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+       <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">پنل مدیریت Itkhaleghi</h3>
+                </div>
+            </div>
+            
+            <div class="navbar-left">
+                <div class="notifications-dropdown">
+                    <a href="notifications.html" class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-btn">
+                        <img src="./images/model.png" alt="User Avatar">
+                        <span>ابوالفضل خالقی</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> پروفایل</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> تنظیمات</a>
+                        <a href="login.html"><i class="fas fa-sign-out-alt"></i> خروج</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="settings-page">
+            <div class="settings-sidebar">
+                <ul class="settings-menu">
+                    <li><a href="#" class="active" data-section="general-settings"><i class="fas fa-cog"></i> تنظیمات عمومی</a></li>
+                    <li><a href="#" data-section="security-settings"><i class="fas fa-shield-alt"></i> امنیت</a></li>
+                    <li><a href="#" data-section="notification-settings"><i class="fas fa-bell"></i> اعلان‌ها</a></li>
+                    <li><a href="#" data-section="appearance-settings"><i class="fas fa-palette"></i> ظاهر</a></li>
+                    <li><a href="#" data-section="backup-settings"><i class="fas fa-database"></i> پشتیبان‌گیری</a></li>
+                </ul>
+            </div>
+            
+            <div class="settings-content">
+                <div id="general-settings" class="settings-section active">
+                    <h2><i class="fas fa-cog"></i> تنظیمات عمومی</h2>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="site-title">عنوان سایت</label>
+                            <input type="text" id="site-title" value="Itkhaleghi">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-description">توضیحات سایت</label>
+                            <textarea id="site-description" rows="3">پنل مدیریت Itkhaleghi</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-language">زبان پیش‌فرض</label>
+                            <select id="site-language">
+                                <option value="fa" selected>فارسی</option>
+                                <option value="en">انگلیسی</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn">ذخیره تغییرات</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="security-settings" class="settings-section">
+                    <h2><i class="fas fa-shield-alt"></i> تنظیمات امنیتی</h2>
+                    <!-- محتوای بخش امنیت -->
+                </div>
+                
+                <div id="notification-settings" class="settings-section">
+                    <h2><i class="fas fa-bell"></i> تنظیمات اعلان‌ها</h2>
+                    <!-- محتوای بخش اعلان‌ها -->
+                </div>
+                
+                <div id="appearance-settings" class="settings-section">
+                    <h2><i class="fas fa-palette"></i> تنظیمات ظاهر</h2>
+                    <!-- محتوای بخش ظاهر -->
+                </div>
+                
+                <div id="backup-settings" class="settings-section">
+                    <h2><i class="fas fa-database"></i> تنظیمات پشتیبان‌گیری</h2>
+
+  <div class="backup-options">
+                    <div class="backup-card">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>پشتیبان‌گیری ابری</h3>
+                        <p>ذخیره خودکار پشتیبان در فضای ابری</p>
+                        <button class="btn">فعال‌سازی</button>
+                    </div>
+                    
+                    <div class="backup-card">
+                        <i class="fas fa-download"></i>
+                        <h3>دانلود پشتیبان</h3>
+                        <p>دریافت آخرین نسخه پشتیبان در سیستم</p>
+                        <button class="btn">دانلود آخرین نسخه</button>
+                    </div>
+                    
+                    <div class="backup-card">
+                        <i class="fas fa-history"></i>
+                        <h3>بازیابی</h3>
+                        <p>بازیابی سیستم از آخرین پشتیبان</p>
+                        <button class="btn">آغاز بازیابی</button>
+                    </div>
+                </div>
+                
+                <div class="backup-schedule">
+                    <h3><i class="fas fa-clock"></i> زمان‌بندی پشتیبان‌گیری</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="backup-frequency">فرکانس پشتیبان‌گیری</label>
+                            <select id="backup-frequency">
+                                <option value="daily">روزانه</option>
+                                <option value="weekly" selected>هفتگی</option>
+                                <option value="monthly">ماهانه</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="backup-time">زمان پشتیبان‌گیری</label>
+                            <input type="time" id="backup-time" value="02:00">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn">ذخیره تنظیمات</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/theme.js"></script>
+
+<script>
+    // تغییر بین بخش‌های تنظیمات
+    document.querySelectorAll('.settings-menu a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // حذف کلاس active از همه لینک‌ها
+            document.querySelectorAll('.settings-menu a').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // اضافه کردن کلاس active به لینک فعلی
+            this.classList.add('active');
+            
+            // مخفی کردن همه بخش‌ها
+            document.querySelectorAll('.settings-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // نمایش بخش مربوطه
+            const sectionId = this.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+        });
+    });
+</script>
+</body> </html>

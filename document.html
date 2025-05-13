@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستندات پنل ادمین | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .documentation {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .doc-section {
+            margin-bottom: 3rem;
+        }
+        
+        .doc-section h2 {
+            color: var(--color-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--main-accent);
+        }
+        
+        .doc-section h3 {
+            color: var(--color-main-dark);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .doc-code {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 7px;
+            border-left: 4px solid var(--color-main);
+            font-family: monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .doc-table th, .doc-table td {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            text-align: right;
+        }
+        
+        .doc-table th {
+            background-color: var(--main-accent);
+            color: var(--color-main);
+        }
+        
+        .doc-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .doc-feature {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 7px;
+            border-left: 4px solid var(--color-main);
+        }
+        
+        .doc-feature h4 {
+            color: var(--color-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="menu-text">بازگشت به پنل</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">مستندات پنل ادمین</h3>
+                    <p class="nav-header-description">راهنمای توسعه‌دهندگان برای استفاده از پنل</p>
+                </div>
+            </div>
+        </header>
+        
+        <main class="documentation">
+            <section class="doc-section">
+                <h2><i class="fas fa-info-circle"></i> معرفی پروژه</h2>
+                <p>پنل ادمین Itkhaleghi یک پنل مدیریتی کامل و واکنش‌گرا است که با HTML5, CSS3 و JavaScript توسعه داده شده است. این پنل مناسب برای سیستم‌های مدیریت محتوا، پنل‌های مدیریتی و برنامه‌های تحت وب است.</p>
+                
+                <div class="doc-features">
+                    <div class="doc-feature">
+                        <h4><i class="fas fa-mobile-alt"></i> واکنش‌گرا</h4>
+                        <p>طراحی کاملاً ریسپانسیو برای تمام دستگاه‌ها از موبایل تا دسکتاپ</p>
+                    </div>
+                    <div class="doc-feature">
+                        <h4><i class="fas fa-moon"></i> دارک مود</h4>
+                        <p>پشتیبانی از حالت تاریک و روشن با قابلیت تغییر توسط کاربر</p>
+                    </div>
+                    <div class="doc-feature">
+                        <h4><i class="fas fa-tachometer-alt"></i> پرسرعت</h4>
+                        <p>بهینه‌شده برای عملکرد بالا و تجربه کاربری روان</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="doc-section">
+                <h2><i class="fas fa-code"></i> راهنمای توسعه</h2>
+                
+                <h3>ساختار فایل‌ها</h3>
+                <div class="doc-code">
+                    project/
+                    ├── index.html          # صفحه اصلی پنل
+                    ├── document.html       # صفحه مستندات
+                    ├── blank.html          # صفحه خالی
+                    ├── login.html          # صفحه ورود
+                    ├── register.html      # صفحه ثبت نام
+                    ├── 404.html           # صفحه خطای 404
+                    ├── 403.html           # صفحه خطای 403
+                    ├── css/
+                    │   └── style.css       # فایل استایل اصلی
+                    ├── js/
+                    │   └── main.js        # فایل JavaScript اصلی
+                    └── images/             # پوشه تصاویر
+                </div>
+                
+                <h3>راه‌اندازی اولیه</h3>
+                <p>برای شروع کار با پنل، کافیست فایل index.html را در مرورگر باز کنید. هیچ وابستگی خارجی به جز فونت آویکون ندارد.</p>
+                
+                <h3>اضافه کردن صفحه جدید</h3>
+                <p>برای اضافه کردن صفحه جدید:</p>
+                <ol>
+                    <li>یک فایل HTML جدید ایجاد کنید (مثال: products.html)</li>
+                    <li>ساختار اصلی را از index.html کپی کنید</li>
+                    <li>محتوا را در بخش main-content قرار دهید</li>
+                    <li>لینک صفحه جدید را به منوی sidebar اضافه کنید</li>
+                </ol>
+            </section>
+            
+            <section class="doc-section">
+                <h2><i class="fas fa-palette"></i> استایل‌دهی و تم‌ها</h2>
+                
+                <h3>متغیرهای CSS</h3>
+                <p>تم اصلی با استفاده از متغیرهای CSS طراحی شده است:</p>
+                <div class="doc-code">
+                    :root {
+                        --color-main: #396aff;
+                        --color-main-dark: #2a52d1;
+                        --bg: #fbfefd;
+                        --bg2: #dce5ff;
+                        --main-accent: #e9eefd;
+                        --shadow: 0 0 16px rgba(17, 17, 26, .1);
+                        --color-text: #333;
+                        --color-text-light: #666;
+                    }
+                    
+                    .dark-mode {
+                        --bg: #1a1a2e;
+                        --color-text: #f1f1f1;
+                        --bg2: #16213e;
+                        --main-accent: #0f3460;
+                    }
+                </div>
+                
+                <h3>کلاس‌های کمکی</h3>
+                <table class="doc-table">
+                    <tr>
+                        <th>کلاس</th>
+                        <th>توضیحات</th>
+                    </tr>
+                    <tr>
+                        <td>.btn</td>
+                        <td>دکمه اصلی با رنگ آبی</td>
+                    </tr>
+                    <tr>
+                        <td>.btn-secondary</td>
+                        <td>دکمه ثانویه با رنگ خاکستری</td>
+                    </tr>
+                    <tr>
+                        <td>.w-full</td>
+                        <td>عرض 100%</td>
+                    </tr>
+                    <tr>
+                        <td>.stat-card</td>
+                        <td>کارت آمار و اطلاعات</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <section class="doc-section">
+                <h2><i class="fas fa-cogs"></i> کامپوننت‌های اصلی</h2>
+                
+                <h3>منوی کناری</h3>
+                <p>منوی کناری با کلاس .sidebar قابل کنترل است. برای جمع کردن منو از کلاس .collapsed استفاده کنید.</p>
+                
+                <h3>جدول داده‌ها</h3>
+                <p>برای ایجاد جدول از ساختار زیر استفاده کنید:</p>
+                <div class="doc-code">
+                    &lt;div class="table-container">
+                        &lt;table class="data-table">
+                            &lt;thead>
+                                &lt;tr>
+                                    &lt;th>عنوان ستون&lt;/th>
+                                    ...
+                                &lt;/tr>
+                            &lt;/thead>
+                            &lt;tbody>
+                                &lt;tr>
+                                    &lt;td>مقدار&lt;/td>
+                                    ...
+                                &lt;/tr>
+                            &lt;/tbody>
+                        &lt;/table>
+                    &lt;/div>
+                </div>
+                
+                <h3>سیستم تب‌ها</h3>
+                <p>برای ایجاد تب‌ها از ساختار زیر استفاده کنید:</p>
+                <div class="doc-code">
+                    &lt;div class="content-tabs">
+                        &lt;div class="tabs-header">
+                            &lt;button class="tab-btn active" data-tab="tab1">تب 1&lt;/button>
+                            &lt;button class="tab-btn" data-tab="tab2">تب 2&lt;/button>
+                        &lt;/div>
+                        
+                        &lt;div class="tabs-content">
+                            &lt;div id="tab1" class="tab-pane active">محتوا 1&lt;/div>
+                            &lt;div id="tab2" class="tab-pane">محتوا 2&lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

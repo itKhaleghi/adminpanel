@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه خالی | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blank-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        
+        .blank-container i {
+            font-size: 5rem;
+            color: var(--color-main);
+            margin-bottom: 2rem;
+        }
+        
+        .blank-container h1 {
+            color: var(--color-main);
+            margin-bottom: 1rem;
+        }
+        
+        .blank-container p {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="menu-text">بازگشت به پنل</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">صفحه خالی</h3>
+                    <p class="nav-header-description">این یک صفحه خالی برای محتوای دلخواه شماست</p>
+                </div>
+            </div>
+        </header>
+        
+        <main class="blank-container">
+            <i class="fas fa-file-alt"></i>
+            <h1>صفحه خالی</h1>
+            <p>این یک صفحه خالی است که می‌توانید محتوای دلخواه خود را در آن قرار دهید.</p>
+            <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> بازگشت به پنل اصلی</a>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

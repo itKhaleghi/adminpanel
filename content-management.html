@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت محتوا | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+</head>
+
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+
+            <div class="sidebar-avatar">
+                <div class="avatar-image">
+                    <img src="./images/model.png" alt="User Avatar">
+                </div>
+                <div class="avatar-info">
+                    <div class="avatar-text">
+                        <h4>ابوالفضل خالقی</h4>
+                        <small>Example@gmail.com</small>
+                    </div>
+                    <span class="fas fa-chevron-down"></span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content-management.html">
+                            <i class="fas fa-file-alt"></i>
+                            <span>مدیریت محتوا</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tickets.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>تیکت‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fas fa-bell"></i>
+                            <span>اعلان‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>تنظیمات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="sidebar-card-box">
+                    <h3>افزودن تبلیغات</h3>
+                    <p>برای کسب درآمد به ویدیوهای خود تبلیغات اضافه کنید</p>
+                </div>
+                <button class="btn w-full pt-5">الان بسازید</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">مدیریت محتوا</h3>
+                    <p class="nav-header-description">نمایش نمودارها و اطلاعات مدیریتی</p>
+                </div>
+            </div>
+
+            <div class="navbar-left">
+                <a href="#"><i class="fas fa-comment-alt"></i> <span class="nav-text">تیکت ها</span></a>
+                <a href="#"><i class="fas fa-bell"></i> <span class="nav-text">اعلان ها</span></a>
+                <a href="#" class="avatar"><img src="./images/model.png" width="40" alt="User Avatar"></a>
+            </div>
+        </header>
+
+        <main class="content-management">
+            <div class="content-header">
+                <h2>مدیریت محتوا </h2>
+                <button class="btn"><i class="fas fa-plus"></i> محتوای جدید</button>
+                <div class="content-actions">
+                    <form class="search-form">
+                        <input type="text" placeholder="جستجو کنید...">
+                        <button type="submit"><svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true"
+                                focusable="false" data-prefix="fas" data-icon="search" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                                </path>
+                            </svg><!-- <i class="fas fa-search"></i> --></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="content-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="articles-tab">مقالات</button>
+                    <button class="tab-btn" data-tab="videos-tab">ویدیوها</button>
+                    <button class="tab-btn" data-tab="categories-tab">دسته‌بندی‌ها</button>
+                </div>
+
+                <div class="tabs-content">
+                    <div id="articles-tab" class="tab-pane active">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ردیف</th>
+                                        <th>عنوان</th>
+                                        <th>نویسنده</th>
+                                        <th>تاریخ انتشار</th>
+                                        <th>وضعیت</th>
+                                        <th>عملیات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>آموزش HTML پیشرفته</td>
+                                        <td>ابوالفضل خالقی</td>
+                                        <td>1402/05/15</td>
+                                        <td><span class="status-badge published">منتشر شده</span></td>
+                                        <td>
+                                            <button class="btn-action edit"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-action delete"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <!-- ردیف‌های بیشتر -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="videos-tab" class="tab-pane">
+                        <!-- محتوای تب ویدیوها -->
+                    </div>
+
+                    <div id="categories-tab" class="tab-pane">
+                        <!-- محتوای تب دسته‌بندی‌ها -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه پیدا نشد | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: var(--color-main);
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .error-description {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="error-page">
+        <div class="error-code">404</div>
+        <div class="error-message">صفحه مورد نظر یافت نشد</div>
+        <div class="error-description">
+            متأسفیم، صفحه‌ای که به دنبال آن هستید وجود ندارد یا ممکن است حذف شده باشد.
+        </div>
+        <a href="index.html" class="btn">
+            <i class="fas fa-home"></i> بازگشت به صفحه اصلی
+        </a>
+    </div>
+</body>
+</html>

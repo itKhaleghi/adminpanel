@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعلان‌ها | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .notifications-page {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .notification-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .notification-item.unread {
+            border-right: 4px solid var(--color-main);
+        }
+        
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--main-accent);
+            color: var(--color-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .notification-content {
+            flex: 1;
+        }
+        
+        .notification-content h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .notification-content p {
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .notification-time {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+        }
+        
+        .notification-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .notification-actions button {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .notification-actions button:hover {
+            color: var(--color-main);
+        }
+        
+        .mark-all-read {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+
+            <div class="sidebar-avatar">
+                <div class="avatar-image">
+                    <img src="./images/model.png" alt="User Avatar">
+                </div>
+                <div class="avatar-info">
+                    <div class="avatar-text">
+                        <h4>ابوالفضل خالقی</h4>
+                        <small>Example@gmail.com</small>
+                    </div>
+                    <span class="fas fa-chevron-down"></span>
+                </div>
+            </div>
+        <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content-management.html">
+                            <i class="fas fa-file-alt"></i>
+                            <span>مدیریت محتوا</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tickets.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>تیکت‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fas fa-bell"></i>
+                            <span>اعلان‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>تنظیمات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="sidebar-card-box">
+                    <h3>افزودن تبلیغات</h3>
+                    <p>برای کسب درآمد به ویدیوهای خود تبلیغات اضافه کنید</p>
+                </div>
+                <button class="btn w-full pt-5">الان بسازید</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+      <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">پنل مدیریت Itkhaleghi</h3>
+                </div>
+            </div>
+            
+            <div class="navbar-left">
+                <div class="notifications-dropdown">
+                    <a href="notifications.html" class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-btn">
+                        <img src="./images/model.png" alt="User Avatar">
+                        <span>ابوالفضل خالقی</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> پروفایل</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> تنظیمات</a>
+                        <a href="login.html"><i class="fas fa-sign-out-alt"></i> خروج</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="notifications-page">
+            <div class="content-header">
+                <h2>اعلان‌ها</h2>
+                <div class="mark-all-read">
+                    <button class="btn btn-secondary">علامت‌گذاری همه به عنوان خوانده شده</button>
+                </div>
+            </div>
+            
+            <div class="notifications-list">
+                <div class="notification-item unread">
+                    <div class="notification-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>پاسخ جدید به تیکت شما</h4>
+                        <p>پشتیبانی Itkhaleghi به تیکت "مشکل در آپلود ویدیو" پاسخ داد.</p>
+                        <div class="notification-time">
+                            <i class="fas fa-clock"></i> 2 ساعت پیش
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button title="علامت‌گذاری به عنوان خوانده شده"><i class="fas fa-check"></i></button>
+                        <button title="حذف"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>کاربر جدید ثبت‌نام کرد</h4>
+                        <p>کاربر با ایمیل example@domain.com در سیستم ثبت‌نام کرد.</p>
+                        <div class="notification-time">
+                            <i class="fas fa-clock"></i> 1 روز پیش
+                        </div>
+                    </div>
+                    <div class="notification-actions">
+                        <button title="علامت‌گذاری به عنوان خوانده شده"><i class="fas fa-check"></i></button>
+                        <button title="حذف"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- اعلان‌های بیشتر -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

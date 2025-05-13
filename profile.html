@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل کاربری | Itkhaleghi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark.css" id="dark-theme" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-page {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--main-accent);
+        }
+        
+        .profile-info h2 {
+            margin-bottom: 0.5rem;
+            color: var(--color-main);
+        }
+        
+        .profile-info p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--color-main);
+        }
+        
+        .profile-form {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <!-- دکمه تغییر حالت دارک/لایت -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon light-icon"></i>
+        <i class="fas fa-sun dark-icon"></i>
+    </button>
+
+    <!-- دکمه همبرگر برای حالت جمع شده -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar collapsed">
+        <div class="sidebar-container">
+            <div class="brand">
+                <img src="./images/logo_itkhaleghi_ir.svg" alt="logo">
+                <h3>Itkhaleghi</h3>
+            </div>
+
+            <div class="sidebar-avatar">
+                <div class="avatar-image">
+                    <img src="./images/model.png" alt="User Avatar">
+                </div>
+                <div class="avatar-info">
+                    <div class="avatar-text">
+                        <h4>ابوالفضل خالقی</h4>
+                        <small>Example@gmail.com</small>
+                    </div>
+                    <span class="fas fa-chevron-down"></span>
+                </div>
+            </div>
+        <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>داشبورد</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="content-management.html">
+                            <i class="fas fa-file-alt"></i>
+                            <span>مدیریت محتوا</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tickets.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>تیکت‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fas fa-bell"></i>
+                            <span>اعلان‌ها</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>تنظیمات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="sidebar-card-box">
+                    <h3>افزودن تبلیغات</h3>
+                    <p>برای کسب درآمد به ویدیوهای خود تبلیغات اضافه کنید</p>
+                </div>
+                <button class="btn w-full pt-5">الان بسازید</button>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+              <header class="main-header">
+            <div class="navbar-right">
+                <div class="nav-header">
+                    <h3 class="nav-header-title">پنل مدیریت Itkhaleghi</h3>
+                </div>
+            </div>
+            
+            <div class="navbar-left">
+                <div class="notifications-dropdown">
+                    <a href="notifications.html" class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-btn">
+                        <img src="./images/model.png" alt="User Avatar">
+                        <span>ابوالفضل خالقی</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> پروفایل</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> تنظیمات</a>
+                        <a href="login.html"><i class="fas fa-sign-out-alt"></i> خروج</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="profile-page">
+            <div class="profile-sidebar">
+                <div class="profile-card">
+                    <img src="./images/model.png" alt="Profile Image" class="profile-image">
+                    <div class="profile-info">
+                        <h2>ابوالفضل خالقی</h2>
+                        <p>مدیر سیستم</p>
+                        <button class="btn"><i class="fas fa-edit"></i> ویرایش پروفایل</button>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <h3>245</h3>
+                            <p>محتوا</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1.2K</h3>
+                            <p>دنبال‌کننده</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-form">
+                    <h2><i class="fas fa-user-cog"></i> اطلاعات شخصی</h2>
+                    
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">نام کامل</label>
+                                <input type="text" id="fullname" value="ابوالفضل خالقی">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">ایمیل</label>
+                                <input type="email" id="email" value="example@gmail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">تلفن همراه</label>
+                                <input type="tel" id="phone" value="09123456789">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="website">وبسایت</label>
+                                <input type="url" id="website" value="https://itkhaleghi.ir">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bio">درباره من</label>
+                            <textarea id="bio" rows="4">برنامه‌نویس و توسعه‌دهنده وب</textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn">ذخیره تغییرات</button>
+                            <button type="reset" class="btn btn-secondary">انصراف</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="profile-form" style="margin-top: 2rem;">
+                    <h2><i class="fas fa-lock"></i> تغییر رمز عبور</h2>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="current-password">رمز عبور فعلی</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="current-password">
+                                <button type="button" class="show-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new-password">رمز عبور جدید</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="new-password">
+                                <button type="button" class="show-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">تکرار رمز عبور</label>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirm-password">
+                                <button type="button" class="show-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn">تغییر رمز عبور</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
